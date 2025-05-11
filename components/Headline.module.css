@@ -1,0 +1,9 @@
+.title {
+  text-transform: capitalize;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert();
+  }
+}

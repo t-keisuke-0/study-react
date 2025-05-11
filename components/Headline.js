@@ -1,13 +1,13 @@
 import Image from "next/image";
-import styles from "@/styles/Home.module.css";
+import classes from "./Headline.module.css";
 
 
 export function Headline(props) {
   return (
     <div>
-        <h1 className={styles.title}>{props.page} page</h1>
+        <h1 className={classes.title}>{props.page} page</h1>
         <Image
-            className={styles.logo}
+            className={classes.logo}
             src="/next.svg"
             alt="Next.js logo"
             width={180}

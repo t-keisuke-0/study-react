@@ -1,10 +1,10 @@
 import Image from "next/image";
-import styles from "@/styles/Home.module.css";
+import classes from "./Footer.module.css";
 
 export function Footer() {
   return (
   <>
-    <footer className={styles.footer}>
+    <footer className={classes.footer}>
       <a
       href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
       target="_blank"
