@@ -16,7 +16,7 @@ export function Headline(props) {
         />
         <ol>
             <li>
-            Get started by editing <code>pages/{props.page}.js</code>.
+                Get started by editing {props.children}
             </li>
             <li>Save and see your changes instantly.</li>
         </ol>
