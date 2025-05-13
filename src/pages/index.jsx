@@ -4,7 +4,7 @@ import styles from "@/src/styles/Home.module.css";
 import { Footer } from "@/src/components/Footer";
 import { Main } from "@/src/components/Main";
 import { Header } from "@/src/components/Header";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +22,6 @@ const geistMono = Geist_Mono({
     // alert(foo)
 // }
 
-
 export default function Home() {
   const foo = 1
 
@@ -31,6 +30,15 @@ export default function Home() {
     e.preventDefault()
     alert(foo)
   }, [])
+
+  useEffect(() => {
+    console.log("マウント時")
+    document.body.style.backgroundColor = "lightblue";
+    return () => {
+      console.log("アンマウント時")
+      document.body.style.backgroundColor = "";
+    }
+  }, []);
 
   return (
     <div>
