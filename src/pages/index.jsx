@@ -21,6 +21,7 @@ export default function Home() {
   const [count, setCount] = useState(1)
   const [text, setText] = useState('')
   const [isShow, setIsShow] = useState(true)
+  const [array, setArray] = useState([])
 
   const handleClick = useCallback(() => {
     if (count < 10) {
@@ -40,6 +41,16 @@ export default function Home() {
     setText(e.target.value.trim())
   }, [])
 
+  const handleAdd = useCallback(() => {
+    setArray((prevArray) => {
+      if (prevArray.some(item => item === text)) {
+        alert("同じ要素が既に存在します。")
+        return prevArray
+      }
+      return [...prevArray, text]
+    }) 
+  }, [text])
+
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
     return () => {
@@ -57,6 +68,14 @@ export default function Home() {
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}>{isShow ? "非表示": "表示"}</button>
       <input type="text" value={text} onChange={handleChange} />
+      <button onClick={handleAdd}>追加</button>
+      <ul>
+        {array.map(item =>{
+          return (
+            <div key={item}>{item}</div>
+          )
+        })}
+      </ul>
       <div
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
