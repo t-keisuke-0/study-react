@@ -30,18 +30,19 @@ export default function About() {
         <title>About Page</title>
       </Head>
       <Header />
-      {isShow ? <h1>{count}</h1>: null}
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}>{isShow ? "非表示": "表示"}</button>
+      {isShow ? <h2>{count}</h2>: null}
+      <hr />
       <input type="text" value={text} onChange={handleChange} />
       <button onClick={handleAdd}>追加</button>
-      <ul>
+      <ol>
         {array.map(item =>{
           return (
             <div key={item}>{item}</div>
           )
         })}
-      </ul>
+      </ol>
       <div
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
