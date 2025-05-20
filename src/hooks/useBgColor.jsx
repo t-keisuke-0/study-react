@@ -5,8 +5,6 @@ import { useEffect, useMemo } from "react";
 export const useBgColor = () => {
   const router = useRouter()
 
-  console.log(router)
-
   const beColor = useMemo(() => {
     switch (router.pathname) {
       case '/': {
